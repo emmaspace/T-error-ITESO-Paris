@@ -1,0 +1,14 @@
+<div id="container">
+  <div id="question">
+    <h2>{{question}}</h2>
+    <mat-form-field appearance="fill" aria-setsize="normal">
+      <mat-select aria-dropeffect="popup" aria-setsize="50%">
+        <mat-option *ngFor="let value of values" [value]="value.value">
+          {{ value.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div id="randomImg">
+  <img src="https://st.depositphotos.com/1011382/2845/i/450/depositphotos_28454079-stock-photo-sunset-hdr-over-the-ocean.jpg" alt="" />
+</div></div>
