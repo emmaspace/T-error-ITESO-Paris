@@ -1,16 +1,14 @@
-<div id="container">
-  <div id="randomImg">
+<div class="container">
+  <div class="randomImg">
     <img
       src="https://st.depositphotos.com/1011382/2845/i/450/depositphotos_28454079-stock-photo-sunset-hdr-over-the-ocean.jpg"
       alt=""
     />
   </div>
-  <div id="question">
-    <h2>{{ question }}</h2>
-   
-        <mat-form-field appearance="fill" aria-setsize="50%" >
-         
-          <input class="mat-h1" matInput type="text" layout-padding="5px">
-        </mat-form-field>
+  <div class="question">
+    <h2 class="question-text">{{ question }}</h2>
+    <div class="webflow-style-input">
+      <input type="email" [value]="answer" />
+    </div>
   </div>
 </div>

@@ -6,10 +6,9 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
   styleUrls: ['./input-question.component.scss']
 })
 export class InputQuestionComponent {
-  @Input() question!: string 
-  answer?: string 
-  constructor() { }
- 
+  @Input() question: string = 'Holakease'
+  answer?: string = ''
+  gradientClass:string=''
   
   handleClick(answer:string){
     this.answer = answer

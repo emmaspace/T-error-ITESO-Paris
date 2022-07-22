@@ -1,4 +1,4 @@
-#container {
+.container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -6,11 +6,11 @@
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
-
   box-sizing: border-box;
   background-color: rgb(221, 161, 94);
   font-family: "Montserrat", sans-serif;
-  #question {
+
+  .question {
     padding: 3em;
     width: 60%;
     height: 100%;
@@ -18,13 +18,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: left;
+
+    h2 {
+      color: #200122;
+      font-size: 1.8em;
+    }
   }
+
   @supports (object-fit: cover) {
-    #randomImg {
-      
-        width: 40%;
+    .randomImg {
+      width: 40%;
       height: 100%;
-     
+
       img {
         height: 100%;
         width: 100%;
@@ -33,5 +38,72 @@
         overflow: hidden;
       }
     }
+  }
+}
+
+//input
+
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem 0.5rem;
+  background: rgba(111, 83, 60, 0.185);
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 1px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: #29170100;
+    border-bottom: 1px solid #2917016e;
+  }
+}
+
+.webflow-style-input:focus-within {
+  &:after {
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      #200122,
+      #6f0000,
+      #b25b1d,
+      #6f0000,
+      #330513
+    );
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+    transform: translateX(0%);
+    transition: all 0.3s ease;
+  }
+}
+
+.webflow-style-input input {
+  border-style: none;
+  background: transparent;
+  outline: none;
+  flex-grow: 1;
+  color: #302201;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  &::-webkit-input-placeholder {
+    color: #25120795;
   }
 }
