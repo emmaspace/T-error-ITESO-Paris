@@ -31,9 +31,10 @@ export class AppComponent implements OnChanges {
       question: '¿En qué tipo de proyecto estás interesado?',
       type: 'select',
       values: [
-        { value: 'steak-0', viewValue: 'Steak' },
-        { value: 'pizza-1', viewValue: 'Pizza' },
-        { value: 'tacos-2', viewValue: 'Tacos' },
+        { value: 'reforestacion', viewValue: 'Reforestacion' },
+        { value: 'manejo forestal mejorado', viewValue: 'Manejo forestal mejorado' },
+        { value: 'Sistemas agroforestales', viewValue: 'Sistemas agroforestales' },
+        { value: "null" , viewValue: 'Sistemas agroforestales' },
       ],
       url: 'https://images.unsplash.com/photo-1416169607655-0c2b3ce2e1cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
     },
