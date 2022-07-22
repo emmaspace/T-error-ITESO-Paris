@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Values } from 'src/app/interfaces/values.interface';
 import {trigger, style, transition, animate, state} from '@angular/animations'
+import { RenderingQuestionsService } from 'src/app/services/rendering-questions.service';
 
 
 
@@ -42,15 +43,12 @@ import {trigger, style, transition, animate, state} from '@angular/animations'
 export class SelectQuestionComponent {
  @Input() img!: string
   @Input() question!: string 
-  values: Values[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
+  @Input() values?: Values[] 
   answer!: string;
-
+constructor(private renderNextQuestion: RenderingQuestionsService){}
   handleChange(e:any){
     console.log(e)
+    this.renderNextQuestion.goForward()
    
     
   }

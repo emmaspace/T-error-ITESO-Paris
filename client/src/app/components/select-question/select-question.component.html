@@ -4,7 +4,7 @@
     <mat-form-field appearance="fill">
       <mat-select
         aria-dropeffect="popup"
-        aria-setsize="50%"
+        aria-setsize="80%"
         (valueChange)="handleChange($event)"
       >
         <mat-option *ngFor="let value of values" [value]="value.value">
@@ -12,7 +12,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <div class="select-container">
+    <!-- <div class="select-container">
       <select>
         <option [value]="">Selecciona una opción</option>
         <div class="select-options">
@@ -21,7 +21,7 @@
           </option>
         </div>
       </select>
-    </div>
+    </div> -->
   </div>
   <div id="randomImg" @enterStateI>
     <img src="{{ img }}" alt="" />

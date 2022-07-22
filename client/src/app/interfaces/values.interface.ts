@@ -1,4 +1,4 @@
 export interface Values {
-    value: string;
-    viewValue: string;
+    value: string| null| boolean;
+    viewValue: string ;
   }
