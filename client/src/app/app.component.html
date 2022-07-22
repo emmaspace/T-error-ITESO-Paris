@@ -1,4 +1,4 @@
-<ng-container [ngSwitch]="actualNumberQuestion">
+<!-- <ng-container [ngSwitch]="actualNumberQuestion">
   
   <app-select-question *ngSwitchCase="1" [question]="questions[1].question" [img]="questions[1].url"></app-select-question>
   <app-select-question *ngSwitchCase="2" [question]="questions[2].question" [img]="questions[2].url"></app-select-question>
@@ -24,5 +24,5 @@
   >
 </ng-container>
 <app-nav-button id='backward' *ngIf="actualNumberQuestion!=undefined"[type]="'backward'"></app-nav-button>
-<app-nav-button id='forward' *ngIf="actualNumberQuestion!=17" [type]="'forward'"></app-nav-button>
-
+<app-nav-button id='forward' *ngIf="actualNumberQuestion!=17" [type]="'forward'"></app-nav-button> -->
+<app-input-question></app-input-question>

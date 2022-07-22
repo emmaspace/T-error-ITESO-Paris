@@ -8,9 +8,12 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class InputQuestionComponent {
   @Input() question!: string 
   @Input() img!: string
-  answer?: string 
+ answer?: string = ''
+  gradientClass:string=''
   constructor() { }
  
+ 
+  
   
   handleClick(answer:string){
     this.answer = answer
