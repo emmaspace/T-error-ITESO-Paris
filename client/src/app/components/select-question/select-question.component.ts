@@ -25,7 +25,7 @@ import {trigger, style, transition, animate, state} from '@angular/animations'
     ]),
     trigger('enterStateI', [
       state('void', style({
-        transform: 'translateX(100%)',
+        transform: 'translateX(-200%)',
         opacity: 0,
        
       })),
@@ -40,7 +40,7 @@ import {trigger, style, transition, animate, state} from '@angular/animations'
   ]
 })
 export class SelectQuestionComponent {
- 
+ @Input() img!: string
   @Input() question!: string 
   values: Values[] = [
     {value: 'steak-0', viewValue: 'Steak'},

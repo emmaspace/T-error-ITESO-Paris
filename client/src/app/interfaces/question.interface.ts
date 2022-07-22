@@ -4,5 +4,6 @@ export interface Question {
     number: number;
     question: string;
     type: 'input' | 'select';
-    values: Values[]
+    values: Values[];
+    url: string
   }
