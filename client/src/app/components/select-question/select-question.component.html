@@ -1,8 +1,12 @@
-<div id="container"  >
-  <div id="question"@enterStateQ>
-    <h2>{{question}}</h2>
-    <mat-form-field appearance="fill" >
-      <mat-select aria-dropeffect="popup" aria-setsize="50%" (valueChange)="handleChange($event)">
+<div id="container">
+  <div id="question" @enterStateQ>
+    <h2>{{ question }}</h2>
+    <mat-form-field appearance="fill">
+      <mat-select
+        aria-dropeffect="popup"
+        aria-setsize="50%"
+        (valueChange)="handleChange($event)"
+      >
         <mat-option *ngFor="let value of values" [value]="value.value">
           {{ value.viewValue }}
         </mat-option>
@@ -19,10 +23,7 @@
       </select>
     </div>
   </div>
-  <div id="randomImg">
-    <img
-      src="{{img}}"
-      alt=""
-    />
+  <div id="randomImg" @enterStateI>
+    <img src="{{ img }}" alt="" />
   </div>
 </div>
