@@ -8,18 +8,25 @@ import { SelectQuestionComponent } from './components/select-question/select-que
 import {MatSelectModule} from '@angular/material/select';
 import { InputQuestionComponent } from './components/input-question/input-question.component';
 import {MatInputModule} from '@angular/material/input';
+import { NavButtonComponent } from './components/nav-button/nav-button.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
     SelectQuestionComponent,
-    InputQuestionComponent
+    InputQuestionComponent,
+    NavButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSelectModule, 
-    MatInputModule
+    MatInputModule,
+    MatButtonModule, 
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
