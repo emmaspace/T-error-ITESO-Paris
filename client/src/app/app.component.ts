@@ -24,13 +24,13 @@ export class AppComponent implements OnChanges {
       question: '¿En qué tipo de proyecto estás interesado?',
       type: 'select',
       values: [
-        { value: 'reforestacion', viewValue: 'Reforestacion' },
+        { value: 're', viewValue: 'Reforestacion' },
         {
-          value: 'manejo forestal mejorado',
+          value: 'mfmejorado',
           viewValue: 'Manejo forestal mejorado',
         },
         {
-          value: 'Sistemas agroforestales',
+          value: 'sa',
           viewValue: 'Sistemas agroforestales',
         },
         { value: null, viewValue: 'Otro' },
@@ -102,7 +102,7 @@ export class AppComponent implements OnChanges {
       type: 'select',
       values: [
         { value: 'comunal/ejidal', viewValue: 'Comunal/Ejidal' },
-        { value: 'pública', viewValue: 'Pública' },
+        { value: 'publica', viewValue: 'Pública' },
         { value: 'privada', viewValue: 'Privada' },
       ],
       url: 'https://images.unsplash.com/photo-1623401416948-1f0a11a49ac5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',

@@ -11,6 +11,9 @@ import {MatInputModule} from '@angular/material/input';
 import { NavButtonComponent } from './components/nav-button/nav-button.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import {MatIconModule} from '@angular/material/icon';
     SelectQuestionComponent,
     InputQuestionComponent,
     NavButtonComponent,
+    CarrouselComponent,
+    QuizComponent,
+   
   ],
   imports: [
     BrowserModule,
