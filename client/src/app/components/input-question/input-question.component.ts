@@ -1,17 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-input-question',
   templateUrl: './input-question.component.html',
   styleUrls: ['./input-question.component.scss']
 })
-export class InputQuestionComponent implements OnInit {
-  @Input() question: string = '¿Cual es tu nombre?'
+export class InputQuestionComponent {
+  @Input() question!: string 
   answer?: string 
   constructor() { }
-
-  ngOnInit(): void {
-  }
+ 
+  
   handleClick(answer:string){
     this.answer = answer
   }

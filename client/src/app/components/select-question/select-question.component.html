@@ -1,8 +1,8 @@
-<div id="container">
-  <div id="question">
+<div id="container"  >
+  <div id="question"@enterState>
     <h2>{{question}}</h2>
     <mat-form-field appearance="fill" >
-      <mat-select aria-dropeffect="popup" aria-setsize="50%">
+      <mat-select aria-dropeffect="popup" aria-setsize="50%" (valueChange)="handleChange($event)">
         <mat-option *ngFor="let value of values" [value]="value.value">
           {{ value.viewValue }}
         </mat-option>

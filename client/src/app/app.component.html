@@ -1,2 +1,28 @@
-<app-nav-button></app-nav-button>
+<ng-container [ngSwitch]="actualNumberQuestion">
+  
+  <app-select-question *ngSwitchCase="1" [question]="questions[1].question"></app-select-question>
+  <app-select-question *ngSwitchCase="2" [question]="questions[2].question"></app-select-question>
+  <app-select-question *ngSwitchCase="3" [question]="questions[3].question"></app-select-question>
+  <app-select-question *ngSwitchCase="4" [question]="questions[4].question"></app-select-question>
+  <app-select-question *ngSwitchCase="5" [question]="questions[5].question"></app-select-question>
+  <app-select-question *ngSwitchCase="6" [question]="questions[6].question"></app-select-question>
+  <app-select-question *ngSwitchCase="7" [question]="questions[7].question"></app-select-question>
+  <app-select-question *ngSwitchCase="8" [question]="questions[8].question"></app-select-question>
+  <app-select-question *ngSwitchCase="9" [question]="questions[9].question"></app-select-question>
+  <app-select-question *ngSwitchCase="10" [question]="questions[10].question"></app-select-question>
+  <app-select-question *ngSwitchCase="11" [question]="questions[11].question"></app-select-question>
+  <app-select-question *ngSwitchCase="12" [question]="questions[12].question"></app-select-question>
+  <app-select-question *ngSwitchCase="13" [question]="questions[13].question"></app-select-question>
+  <app-select-question *ngSwitchCase="14" [question]="questions[14].question"></app-select-question>
+  <app-select-question *ngSwitchCase="15" [question]="questions[15].question"></app-select-question>
+  <app-select-question *ngSwitchCase="16" [question]="questions[16].question"></app-select-question>
+  <app-select-question *ngSwitchCase="17" [question]="questions[17].question"></app-select-question>
+
+  
+  <app-input-question *ngSwitchDefault [question]="questions[0].question"
+    ></app-input-question
+  >
+</ng-container>
+<app-nav-button id='backward' *ngIf="actualNumberQuestion!=undefined"[type]="'backward'"></app-nav-button>
+<app-nav-button id='forward' *ngIf="actualNumberQuestion!=17" [type]="'forward'"></app-nav-button>
 
