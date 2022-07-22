@@ -9,7 +9,7 @@ import {trigger, style, transition, animate, state} from '@angular/animations'
   templateUrl: './select-question.component.html',
   styleUrls: ['./select-question.component.scss'],
   animations:[
-    trigger('enterState', [
+    trigger('enterStateQ', [
       state('void', style({
         transform: 'translateY(100%)',
         opacity: 0,
@@ -18,6 +18,20 @@ import {trigger, style, transition, animate, state} from '@angular/animations'
       transition(':enter',[
         animate(500, style({
           transform:'translateY(0%)',
+          opacity:1
+        }))
+        
+      ])
+    ]),
+    trigger('enterStateI', [
+      state('void', style({
+        transform: 'translateX(100%)',
+        opacity: 0,
+       
+      })),
+      transition(':enter',[
+        animate(500, style({
+          transform:'translateX(0%)',
           opacity:1
         }))
         

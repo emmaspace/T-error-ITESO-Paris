@@ -1,5 +1,5 @@
 <div id="container"  >
-  <div id="question"@enterState>
+  <div id="question"@enterStateQ>
     <h2>{{question}}</h2>
     <mat-form-field appearance="fill" >
       <mat-select aria-dropeffect="popup" aria-setsize="50%" (valueChange)="handleChange($event)">
@@ -9,6 +9,6 @@
       </mat-select>
     </mat-form-field>
   </div>
-  <div id="randomImg">
+  <div id="randomImg" @enterStateI>
   <img src="https://st.depositphotos.com/1011382/2845/i/450/depositphotos_28454079-stock-photo-sunset-hdr-over-the-ocean.jpg" alt="" />
 </div></div>
