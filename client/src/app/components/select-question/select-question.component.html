@@ -1,5 +1,12 @@
-<div id="container">
-  <div id="question" @enterStateQ>
+<div class="container">
+  <div class="randomImg">
+    <img 
+    class="image-side"
+      src="{{img}}"
+      alt=""
+    />
+  </div>
+  <div class="question" @enterStateQ>
     <h2>{{ question }}</h2>
     <mat-form-field appearance="fill">
       <mat-select

@@ -1,16 +1,13 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Question } from 'src/app/interfaces/question.interface';
-import { RenderingQuestionsService } from 'src/app/services/rendering-questions.service';
-import { ZipCodeService } from 'src/app/services/zip-code.service';
+import { Injectable } from '@angular/core';
+import { Answers } from '../interfaces/Answers.interface';
+import { Question } from '../interfaces/question.interface';
+import { ZipCodeService } from './zip-code.service';
 
-
-@Component({
-  selector: 'app-quiz',
-  templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.scss'],
+@Injectable({
+  providedIn: 'root',
 })
-export class QuizComponent implements OnInit, OnChanges {
+export class QuestionsService {
+  constructor (public zipService:ZipCodeService){}
   questions: Question[] = [
     {
       number: 0,
@@ -78,16 +75,20 @@ export class QuizComponent implements OnInit, OnChanges {
     },
     {
       number: 3,
-      question: '¿Cuál es el código postal?',
-      type: 'input',
-      values: [
-        { value: 'sanbartolo', viewValue: 'San Francisco de Borja' },
-        { value: 'sanbartolo', viewValue: 'Santa Ana' },
-      ],
-      url: 'https://images.unsplash.com/photo-1528061741848-d825d32057f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+      question: '¿El terreno tiene código postal?',
+      type: 'select',
+      values: [{ value: true, viewValue: 'Sí' }, { value: false, viewValue: 'No' }],
+      url:''
     },
     {
       number: 4,
+      question: '¿Cuál es el código postal?',
+      type: 'input',
+      values: [{ value: '', viewValue: '' }],
+      url: 'https://images.unsplash.com/photo-1528061741848-d825d32057f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+    },
+    {
+      number: 5,
       question: '¿En qué colonia se encuentra?',
       type: 'select',
       values: [],
@@ -95,6 +96,13 @@ export class QuizComponent implements OnInit, OnChanges {
     },
     {
       number: 5,
+      question: 'Por favor indica su ubicación en el mapa',
+      type: 'map',
+      values: [],
+      url: ''
+    },
+    {
+      number: 6,
       question: '¿Qué tipo de propiedad tiene la tierra que quieres evaluar?',
       type: 'select',
       values: [
@@ -105,7 +113,7 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1623401416948-1f0a11a49ac5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 6,
+      number: 7,
       question:
         '¿La tierra está legalizada y tiene todos sus papeles en regla?',
       type: 'select',
@@ -117,7 +125,7 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1657865700616-7ba48322a346?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 7,
+      number: 8,
       question: '¿Este territorio se ha utilizado para cultivar?',
       type: 'select',
       values: [
@@ -128,7 +136,7 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1632833690610-193ea87a7c9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 8,
+      number: 9,
       question:
         '¿El territorio se encuentra en una zona donde han ocurrido desastres naturales?',
       type: 'select',
@@ -140,7 +148,7 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1621000801692-584eecc58d0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 9,
+      number: 10,
       question: '¿La tierra tiene humedales?',
       type: 'select',
       values: [
@@ -151,7 +159,7 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1541086263351-627c0c6999aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 10,
+      number: 11,
       question:
         '¿Los humedales con los que cuenta este territorio son artificiales? (es decir, fueron creados para la acuicultura intensiva o para la agricultura hidropónica',
       type: 'select',
@@ -163,9 +171,9 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1632052376495-1cc272939b31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 11,
+      number: 12,
       question:
-        '¿Tienes un shapefile o archivo kml con los datos de la tierra a evaluar?',
+        '¿Tienes un shapefile con los datos de la tierra a evaluar?',
       type: 'select',
       values: [
         { value: true, viewValue: 'Sí' },
@@ -174,7 +182,16 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1605784625692-4db03845e558?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 12,
+      number: 13,
+      question:
+        'Por favor sube tu archivo shapefile',
+      type: 'upload',
+      values: [
+      ],
+      url: 'https://images.unsplash.com/photo-1605784625692-4db03845e558?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+    },
+    {
+      number: 14,
       question: '¿Hay vegetación o árboles en la tierra?',
       type: 'select',
       values: [
@@ -185,7 +202,7 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1445346753792-6c667d917349?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
     {
-      number: 13,
+      number: 15,
       question:
         '¿Consideras que más del 30% del area de la tierra está cubierta de árboles de más de 5 metro (sin incluir pastos ni arbustos)?',
       type: 'select',
@@ -197,18 +214,15 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1445792717459-f91f27228609?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80',
     },
     {
-      number: 14,
-      question: 'Actualmente, ¿cuál es el uso que tiene la tierra?',
-      type: 'select',
+      number: 16,
+      question: 'Por favor ingresa qué uso actual tiene la tierra y sus usos anteriores separados por una coma',
+      type: 'input',
       values: [
-        { value: 'steak-0', viewValue: 'Steak' },
-        { value: 'pizza-1', viewValue: 'Pizza' },
-        { value: 'tacos-2', viewValue: 'Tacos' },
       ],
       url: 'https://images.unsplash.com/photo-1462717909674-1e3e107e231b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
     },
     {
-      number: 15,
+      number: 17,
       question:
         '¿Anteriormente, existía un proyecto de carbono en este mismo territorio?',
       type: 'select',
@@ -220,18 +234,50 @@ export class QuizComponent implements OnInit, OnChanges {
       url: 'https://images.unsplash.com/photo-1508144322886-717c284ab392?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     },
   ];
-
-  actualNumberQuestion$!: Observable<number>;
-  @Input() actualNumberQuestion!: number;
-  constructor(private renderQuestion: RenderingQuestionsService) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+  answers: Answers = {
+    project_type: '',
+  address: {
+    state: '',
+    latitude: 0,
+    longitude: 0,
+  },
+  property_type: 'privada',
+  legal: true,
+  past_cultivate: false,
+  natural_disasters: false,
+  wetland: false,
+  has_shapefile: false,
+  shapefile: '',
+  vegetation: false,
+  tree_percentage: 0,
+  land_use: '',
+  approved: true,
+  past_project: false,
   }
-  ngOnInit(): void {
-    this.actualNumberQuestion$ = this.renderQuestion.getNumber();
-    this.actualNumberQuestion$.subscribe(
-      (number) => (this.actualNumberQuestion = number)
-    );
-    console.log(this.actualNumberQuestion);
+  currentQuestion: number = 0;
+  goForward: boolean = true;
+  goBackward: boolean = false;
+  getCurrentQuestion(direction: 'forward' | 'backward'): number {
+    if (direction === 'forward') {
+      this.currentQuestion = this.currentQuestion + 1;
+    }
+    if (direction === 'backward') {
+      this.currentQuestion = this.currentQuestion - 1;
+    }
+    if (this.currentQuestion === 19) {
+      this.goForward === false;
+    } else {
+      this.goForward === true;
+    }
+    if (this.currentQuestion === 0) {
+      this.goBackward === false;
+    } else {
+      this.goBackward === true;
+    }
+    if (this.currentQuestion === 4) {
+
+    }
+
+    return this.currentQuestion;
   }
 }
