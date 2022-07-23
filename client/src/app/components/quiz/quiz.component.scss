@@ -1,0 +1,14 @@
+#backward {
+    position: absolute;
+    transform: rotate(270deg);
+    z-index: 5;
+    bottom: 3em;
+    left: 3em;
+  }
+  #forward {
+    position: absolute;
+    transform: rotate(90deg);
+    z-index: 5;
+    bottom: 3em;
+    right: 3em;
+  }

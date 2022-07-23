@@ -1,0 +1,30 @@
+ <ng-container [ngSwitch]="actualNumberQuestion">
+  
+  <app-select-question *ngSwitchCase="1" [question]="questions[1].question" [img]="questions[1].url" [values]="questions[1].values"></app-select-question>
+  <app-select-question *ngSwitchCase="2" [question]="questions[2].question" [img]="questions[2].url" [values]="questions[2].values"></app-select-question>
+  <app-input-question *ngSwitchCase="3" [question]="questions[3].question" [img]="questions[3].url" ></app-input-question>
+  <app-select-question *ngSwitchCase="4" [question]="questions[4].question" [img]="questions[4].url" [values]="questions[4].values"></app-select-question>
+  <app-select-question *ngSwitchCase="5" [question]="questions[5].question" [img]="questions[5].url" [values]="questions[5].values"></app-select-question>
+  <app-select-question *ngSwitchCase="6" [question]="questions[6].question" [img]="questions[6].url" [values]="questions[6].values"></app-select-question>
+  <app-select-question *ngSwitchCase="7" [question]="questions[7].question" [img]="questions[7].url" [values]="questions[7].values"></app-select-question>
+  <app-select-question *ngSwitchCase="8" [question]="questions[8].question" [img]="questions[8].url" [values]="questions[8].values"></app-select-question>
+  <app-select-question *ngSwitchCase="9" [question]="questions[9].question" [img]="questions[9].url" [values]="questions[9].values"></app-select-question>
+  <app-select-question *ngSwitchCase="10" [question]="questions[10].question" [img]="questions[10].url" [values]="questions[10].values"></app-select-question>
+  <app-select-question *ngSwitchCase="11" [question]="questions[11].question" [img]="questions[11].url" [values]="questions[11].values"></app-select-question>
+  <app-select-question *ngSwitchCase="12" [question]="questions[12].question" [img]="questions[12].url"
+  [values]="questions[12].values"></app-select-question>
+  <app-select-question *ngSwitchCase="13" [question]="questions[13].question" [img]="questions[13].url"[values]="questions[13].values"></app-select-question>
+  <app-select-question *ngSwitchCase="14" [question]="questions[14].question" [img]="questions[14].url"
+  [values]="questions[14].values"></app-select-question>
+  <app-select-question *ngSwitchCase="15" [question]="questions[15].question" [img]="questions[15].url"
+  [values]="questions[15].values"></app-select-question>
+  
+
+  
+  <app-input-question *ngSwitchDefault [question]="questions[0].question" [img]="questions[0].url"
+    ></app-input-question
+  >
+</ng-container>
+<app-nav-button id='backward' *ngIf="actualNumberQuestion!=undefined"[type]="'backward'"></app-nav-button>
+<app-nav-button id='forward' *ngIf="actualNumberQuestion!=17" [type]="'forward'"></app-nav-button> 
+

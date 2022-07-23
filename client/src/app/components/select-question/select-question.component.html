@@ -1,0 +1,16 @@
+<div id="container">
+  <div id="question" @enterStateQ>
+    <h2>{{ question }}</h2>
+    <mat-form-field appearance="fill">
+      <mat-select
+        aria-dropeffect="popup"
+        aria-setsize="80%"
+        (valueChange)="handleChange($event)"
+      >
+        <mat-option *ngFor="let value of values" [value]="value.value">
+          {{ value.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
