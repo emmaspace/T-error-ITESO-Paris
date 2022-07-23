@@ -14,7 +14,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { HomeComponent } from './components/home/home.component';
-import { QuestionnaireComponent } from './components/questionnaire/questionnaire.component';
 import { ApprovedResponseComponent } from './components/approved-response/approved-response.component';
 import { FailedResponseComponent } from './components/failed-response/failed-response.component';
 
@@ -27,7 +26,6 @@ import { FailedResponseComponent } from './components/failed-response/failed-res
     CarrouselComponent,
     QuizComponent,
     HomeComponent,
-    QuestionnaireComponent,
     ApprovedResponseComponent,
     FailedResponseComponent,
   ],
