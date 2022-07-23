@@ -9,7 +9,7 @@ import { ZipCodeService } from './services/zip-code.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnChanges {
+export class AppComponent{
   title = 'Elegibilidad-proyectos-de-carbono';
   questions: Question[] = [
     {
@@ -230,9 +230,7 @@ export class AppComponent implements OnChanges {
   actualNumberQuestion$!: Observable<number>;
   @Input() actualNumberQuestion!: number;
   constructor(private renderQuestion: RenderingQuestionsService) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
+
   ngOnInit(): void {
     const service = new ZipCodeService();
     console.log(service.getZipCodeInfo(54020));
