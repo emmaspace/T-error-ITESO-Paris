@@ -1,0 +1,5 @@
+Flask-Cors
+flask-expects-json==1.5.0
+Flask==2.0.1
+geopandas
+wget
